@@ -423,12 +423,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 5% 
       <div class="cform">
         <div class="cform-title">Place an Order</div>
         <div class="frow">
-          <div class="field"><label>Your Name</label><input type="text" placeholder="Priya Sharma"/></div>
-          <div class="field"><label>Phone / Instagram</label><input type="text" placeholder="@yourinsta"/></div>
+          <div class="field"><label>Your Name</label><input type="text" id="ord-name" placeholder="Priya Sharma"/></div>
+          <div class="field"><label>Phone / Instagram</label><input type="text" id="ord-contact" placeholder="@yourinsta"/></div>
         </div>
-        <div class="field"><label>Set Type</label><select><option value="">Select a collection...</option><option>Signature Set</option><option>Glam Series</option><option>Noir Edit</option><option>Custom Order</option><option>Bridal Set</option></select></div>
-        <div class="field"><label>Shape Preference</label><select><option value="">Select shape...</option><option>Almond</option><option>Coffin / Ballerina</option><option>Stiletto</option><option>Square</option><option>Oval</option></select></div>
-        <div class="field"><label>Design Details / Inspo</label><textarea placeholder="Describe your dream nails, share inspo, occasion, colour preferences..."></textarea></div>
+        <div class="field"><label>Set Type</label><select id="ord-set"><option value="">Select a collection...</option><option>Signature Set</option><option>Glam Series</option><option>Noir Edit</option><option>Custom Order</option><option>Bridal Set</option></select></div>
+        <div class="field"><label>Shape Preference</label><select id="ord-shape"><option value="">Select shape...</option><option>Almond</option><option>Coffin / Ballerina</option><option>Stiletto</option><option>Square</option><option>Oval</option></select></div>
+        <div class="field"><label>Design Details / Inspo</label><textarea id="ord-details" placeholder="Describe your dream nails, share inspo, occasion, colour preferences..."></textarea></div>
         <button class="btn-submit" type="button" onclick="sendToWhatsApp()">Send Order Request</button>
       </div>
     </div>
@@ -497,27 +497,28 @@ document.querySelectorAll('.will-reveal').forEach(el=>obs.observe(el));
 
 /* WHATSAPP ORDER */
 function sendToWhatsApp() {
-  const name     = document.querySelector('input[placeholder="Priya Sharma"]').value.trim();
-  const contact  = document.querySelector('input[placeholder="@yourinsta"]').value.trim();
-  const setType  = document.querySelector('.cform select:nth-of-type(1)').value;
-  const shape    = document.querySelector('.cform select:nth-of-type(2)').value;
-  const details  = document.querySelector('.cform textarea').value.trim();
+  const name    = document.getElementById('ord-name').value.trim();
+  const contact = document.getElementById('ord-contact').value.trim();
+  const setType = document.getElementById('ord-set').value;
+  const shape   = document.getElementById('ord-shape').value;
+  const details = document.getElementById('ord-details').value.trim();
 
   if (!name || !contact) {
     alert('Please fill in your name and phone / Instagram handle 💕');
     return;
   }
 
-  const msg = 
-    `💅 *New Order — Rainails*%0A%0A` +
-    `*Name:* ${encodeURIComponent(name)}%0A` +
-    `*Contact:* ${encodeURIComponent(contact)}%0A` +
-    `*Set Type:* ${encodeURIComponent(setType || 'Not selected')}%0A` +
-    `*Shape:* ${encodeURIComponent(shape || 'Not selected')}%0A` +
-    `*Design Details:* ${encodeURIComponent(details || 'None provided')}%0A%0A` +
-    `_Sent via Rainails website_`;
+  const msg = encodeURIComponent(
+    '💅 New Order — Rainails\n\n' +
+    'Name: ' + name + '\n' +
+    'Contact: ' + contact + '\n' +
+    'Set Type: ' + (setType || 'Not selected') + '\n' +
+    'Shape: ' + (shape || 'Not selected') + '\n' +
+    'Design Details: ' + (details || 'None provided') + '\n\n' +
+    'Sent via Rainails website'
+  );
 
-  window.open(`https://wa.me/918305106949?text=${msg}`, '_blank');
+  window.open('https://wa.me/918305106949?text=' + msg, '_blank');
 }
 
 /* MOBILE MENU */
