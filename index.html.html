@@ -145,7 +145,7 @@ section{padding:7rem 5%;position:relative;}
 .svc{background:var(--glass);border:1px solid var(--border);border-radius:4px;padding:2.2rem;position:relative;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s;}
 .svc::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(201,169,110,.07),transparent 60%);opacity:0;transition:opacity .35s;}
 .svc:hover{transform:translateY(-5px);border-color:rgba(201,169,110,.2);box-shadow:0 24px 60px rgba(0,0,0,.4);}
-.svc:hover::before{opacity:1;}
+.svc:hover::before{opacity:1;} .svc[onclick]:hover::after{content:"Browse →";position:absolute;bottom:1.2rem;right:1.2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.8;}
 .svc-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:200;color:var(--border2);line-height:1;margin-bottom:1rem;}
 .svc-icon{font-size:1.6rem;margin-bottom:1rem;}
 .svc-name{font-size:1rem;font-weight:500;color:var(--text);margin-bottom:.5rem;}
@@ -278,7 +278,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 5% 
   <a href="#" class="logo" aria-label="Rainails - Premium Press On Nails Homepage">Rai<em>nails</em></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
+    <li><a href="shop.html">Shop</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -367,12 +367,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 5% 
     <a href="#contact" class="btn-outline will-reveal">Order Any Set →</a>
   </div>
   <div class="services-grid">
-    <div class="svc will-reveal"><div class="svc-badge">Bestseller</div><div class="svc-icon">🌸</div><div class="svc-name">Signature Sets</div><p class="svc-desc">Curated ready-to-wear collections. Almond, coffin, stiletto, and square shapes in seasonal designs.</p><div class="svc-price">from ₹ 549</div></div>
-    <div class="svc will-reveal d1"><div class="svc-badge">Popular</div><div class="svc-icon">✨</div><div class="svc-name">Glam Series</div><p class="svc-desc">Rhinestones, 3D floral art, chrome and foil effects — designed to turn heads and own the room.</p><div class="svc-price">from ₹ 699</div></div>
-    <div class="svc will-reveal d2"><div class="svc-badge">New</div><div class="svc-icon">🖤</div><div class="svc-name">Noir Edit</div><p class="svc-desc">Minimal, moody, and powerful. Dark tones with gold detailing for the understated luxe look.</p><div class="svc-price">from ₹ 649</div></div>
-    <div class="svc will-reveal d3"><div class="svc-badge">Bespoke</div><div class="svc-icon">🎨</div><div class="svc-name">Custom Order</div><p class="svc-desc">Your vision, our craftsmanship. Send your inspo and we'll create a one-of-a-kind set for you.</p><div class="svc-price">from ₹ 799</div></div>
-    <div class="svc will-reveal d1"><div class="svc-icon">💍</div><div class="svc-name">Bridal Sets</div><p class="svc-desc">Wedding-ready nails with intricate lace, pearl, and crystal designs for bride and bridesmaids.</p><div class="svc-price">from ₹ 999</div></div>
-    <div class="svc will-reveal d2"><div class="svc-icon">📦</div><div class="svc-name">Starter Kit</div><p class="svc-desc">Your chosen set, premium nail glue, prep kit, size chart, and full application guide included.</p><div class="svc-price">from ₹ 199</div></div>
+    <div class="svc will-reveal" onclick="location.href='shop.html#signature'" style="cursor:pointer;"><div class="svc-badge">Bestseller</div><div class="svc-icon">🌸</div><div class="svc-name">Signature Sets</div><p class="svc-desc">Curated ready-to-wear collections. Almond, coffin, stiletto, and square shapes in seasonal designs.</p><div class="svc-price">from ₹ 549</div></div>
+    <div class="svc will-reveal d1" onclick="location.href='shop.html#glam'" style="cursor:pointer;"><div class="svc-badge">Popular</div><div class="svc-icon">✨</div><div class="svc-name">Glam Series</div><p class="svc-desc">Rhinestones, 3D floral art, chrome and foil effects — designed to turn heads and own the room.</p><div class="svc-price">from ₹ 699</div></div>
+    <div class="svc will-reveal d2" onclick="location.href='shop.html#noir'" style="cursor:pointer;"><div class="svc-badge">New</div><div class="svc-icon">🖤</div><div class="svc-name">Noir Edit</div><p class="svc-desc">Minimal, moody, and powerful. Dark tones with gold detailing for the understated luxe look.</p><div class="svc-price">from ₹ 649</div></div>
+    <div class="svc will-reveal d3" onclick="location.href='shop.html#custom'" style="cursor:pointer;"><div class="svc-badge">Bespoke</div><div class="svc-icon">🎨</div><div class="svc-name">Custom Order</div><p class="svc-desc">Your vision, our craftsmanship. Send your inspo and we'll create a one-of-a-kind set for you.</p><div class="svc-price">from ₹ 799</div></div>
+    <div class="svc will-reveal d1" onclick="location.href='shop.html#bridal'" style="cursor:pointer;"><div class="svc-icon">💍</div><div class="svc-name">Bridal Sets</div><p class="svc-desc">Wedding-ready nails with intricate lace, pearl, and crystal designs for bride and bridesmaids.</p><div class="svc-price">from ₹ 999</div></div>
+    <div class="svc will-reveal d2" onclick="location.href='shop.html#starter'" style="cursor:pointer;"><div class="svc-icon">📦</div><div class="svc-name">Starter Kit</div><p class="svc-desc">Your chosen set, premium nail glue, prep kit, size chart, and full application guide included.</p><div class="svc-price">from ₹ 199</div></div>
   </div>
 </section>
 
@@ -435,6 +435,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 5% 
     </div>
   </div>
 </section>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/918305106949" target="_blank" style="position:fixed;bottom:2rem;right:2rem;z-index:200;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.6rem;box-shadow:0 8px 24px rgba(37,211,102,.35);animation:waPulse 2.5s ease-in-out infinite;" title="Chat on WhatsApp">💬</a>
+<style>@keyframes waPulse{0%,100%{box-shadow:0 8px 24px rgba(37,211,102,.35);}50%{box-shadow:0 8px 32px rgba(37,211,102,.6),0 0 0 8px rgba(37,211,102,.1);}}</style>
 
 <!-- FOOTER -->
 <footer>
