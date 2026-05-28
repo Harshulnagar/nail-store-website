@@ -544,6 +544,48 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 5% 
 .pc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,169,110,.3);}
 /* product filter uses inline display style instead */
 
+
+/* ── MOBILE QUICK NAV ── */
+.mobile-quick-nav{
+  display:none;
+  margin-top:1.8rem;
+  grid-template-columns:1fr 1fr;
+  gap:.7rem;
+}
+.mqn-item{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.75rem 1rem;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:8px;
+  text-decoration:none;
+  color:var(--text2);
+  font-family:'Syne',sans-serif;
+  font-size:.68rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  transition:background .25s,border-color .25s,color .25s;
+  -webkit-tap-highlight-color:transparent;
+}
+.mqn-item:active,.mqn-item:hover{
+  background:rgba(201,169,110,.08);
+  border-color:rgba(201,169,110,.25);
+  color:var(--gold);
+}
+.mqn-item.mqn-shop{
+  grid-column:span 2;
+  border-color:rgba(201,169,110,.2);
+  color:var(--gold);
+  background:rgba(201,169,110,.05);
+  justify-content:center;
+}
+.mqn-icon{font-size:1rem;}
+@media(max-width:768px){
+  .mobile-quick-nav{display:grid;}
+}
+
 </style>
 </style>
 </head>
@@ -586,6 +628,22 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 5% 
     <div class="hero-ctas">
       <a href="shop.html" class="btn-gold">Explore Collection</a>
       <a href="#contact" class="btn-outline">Custom Order →</a>
+    </div>
+
+    <!-- MOBILE QUICK NAV -->
+    <div class="mobile-quick-nav">
+      <a href="shop.html" class="mqn-item mqn-shop">
+        <span class="mqn-icon">🛍️</span> Shop All Collections
+      </a>
+      <a href="#about" class="mqn-item">
+        <span class="mqn-icon">✦</span> About
+      </a>
+      <a href="#gallery" class="mqn-item">
+        <span class="mqn-icon">🖼️</span> Gallery
+      </a>
+      <a href="#contact" class="mqn-item">
+        <span class="mqn-icon">💬</span> Contact
+      </a>
     </div>
     <div class="hero-stats">
       <div><span class="num">500+</span><span class="lbl">Happy Clients</span></div>
